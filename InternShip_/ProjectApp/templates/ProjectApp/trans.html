@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Transactions</title>
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+	* {
+		margin: 0px;
+		padding: 0px;
+		box-sizing: border-box;
+	}
+
+	nav {
+
+		background-color: #222;
+		;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 27px;
+
+
+	}
+
+	nav h2 {
+		color: white;
+		font-weight: bolder;
+		font-family: 'Fjalla One', sans-serif;
+	}
+
+	nav ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	nav ul li {
+		list-style: none;
+		padding: 0px 5px;
+	}
+
+	nav ul li a {
+		text-decoration: none;
+		color: white;
+		font-size: 15px;
+		margin: 20px;
+		font-size: medium;
+	}
+
+	.hov:hover {
+		border-bottom: 3px solid red;
+		font-size: larger;
+
+	}
+
+	.heading {
+		color: red;
+		font-size: 50px;
+		line-height: 80px;
+		padding: 0 50px;
+		font-weight: bold;
+	}
+
+	.p1 {
+		font-family: serif, Cursive;
+		color: black;
+		font-size: 30px;
+		line-height: 50px;
+		padding: 0 50px;
+		font-weight: em;
+	}
+
+	.writter {
+		color: grey;
+		font-size: 15px;
+		line-height: 50px;
+		padding: 0 50px;
+	}
+
+	.t1 {
+		color: black;
+		font-size: 40px;
+		line-height: 77px;
+		font-weight: bold;
+	}
+
+	.table1 {
+		border-collapse: collapse;
+		margin: 25px 0;
+		font-size: 1.3em;
+		
+		border-radius: 10px 10px 5px 5px;
+		overflow: hidden;
+		box-shadow: 0 0 20px rbga(0, 0, 0, 0.15);
+		text-align: center;
+	}
+
+	.table1 thead tr {
+		background-color: navy;
+		color: white;
+
+		font-weight: bold;
+	}
+
+	.table1 th,
+	.table1 td {
+		padding: 12px 15px;
+	}
+
+	.table1 tbody tr {
+		border-bottom: 1px solid #dddddd;
+	}
+
+	.table1 tbody tr:nth-of-type(even) {
+		background-color: #f3f3f3b6;
+	}
+
+	.table1 tbody tr:last-of-type {
+		border-bottom: 2px solid black;
+	}
+
+	.center {
+		position: relative;
+		background: white;
+		overflow: hidden;
+		margin: 150px 20px;
+		border-radius: 10px;
+	}
+
+	.center form {
+		padding: 0 40px;
+		box-sizing: border-box;
+	}
+
+	input[type=text],
+	#email,
+	input[type=email] {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+
+	input[type=submit] {
+		width: 100%;
+		background-color: #4CAF50;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+		background-color: purple;
+	}
+
+	#refresh {
+		position: relative;
+		align-self: center;
+		font-size: 50px;
+	}
+
+	.make_it_center {
+		text-align: center;
+	}
+
+	.heading {
+		text-align: center;
+		margin: 511px;
+	}
+
+	.t1 {
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		font-family: 'Fjalla One', sans-serif;
+
+	}
+
+	.centi {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.active {
+		color: yellow;
+		font-size: larger;
+	  }
+</style>
+
+<body>
+	<nav>
+		<h2>Online Banking</h2>
+		<ul>
+			<li><a class="hov" href="customers">Customer Details</a></li>
+			<li><a class="active" href="trans">Transaction Details</a></li>
+
+		</ul>
+	</nav>
+	<section class="centerit">
+
+		<label class="t1">Transactions Detail</label>
+		<div class="centi">
+			<table class="table1">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Amt Debited</th>
+						<th>Amt Credited</th>
+						<th>Acc. Bal</th>
+					</tr>
+				</thead>
+
+				<body>
+					{% for i in trans %}
+					<tr>
+						<td>{{i.id}}</td>
+						<td>{{i.name}}</td>
+						<td>{{i.email}}</td>
+						<td>{{i.deb_amt}}</td>
+						<td>{{i.cr_amt}}</td>
+						<td>{{i.ac_bal}}₹</td>
+					</tr>
+					{% endfor %}
+				</body>
+
+			</table>
+		</div>
+		<button id="Refresh"><a href="trans">Refresh</a></button>
+	</section>
+
+
+</body>
+
+</html>

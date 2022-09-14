@@ -1,0 +1,76 @@
+<!-- {% load static } -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+</head>
+<style>
+    * {
+		margin: 0px;
+		padding: 0px;
+		box-sizing: border-box;
+	}
+
+	nav {
+
+		background-color: #222;
+		;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 27px;
+
+
+	}
+
+	nav h2 {
+		color: white;
+		font-weight: bolder;
+		font-family: 'Fjalla One', sans-serif;
+	}
+
+	nav ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	nav ul li {
+		list-style: none;
+		padding: 0px 5px;
+	}
+
+	nav ul li a {
+		text-decoration: none;
+		color: white;
+		font-size: 15px;
+		margin: 20px;
+		font-size: medium;
+	}
+
+	.hov:hover {
+		border-bottom: 3px solid red;
+		font-size: larger;
+
+	}
+    .active {
+		color: yellow;
+		font-size: larger;
+	  }
+</style>
+<body>
+    <nav>
+		<a href="customers.html"> <h2>Online Banking</h2> </a>
+		<ul>
+			<li><a class="hov" href="index" >Home</a></li>
+			<li><a class="hov" href="customers">Customer Details</a></li>
+			<li><a class="hov" href="trans">Transaction Details</a></li>
+			<li><a class="active"  href="">Services</a></li>
+
+		</ul>
+	</nav>
+</body>
+</html>

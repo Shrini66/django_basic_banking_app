@@ -1,0 +1,291 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Welcome</title>
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+
+</head>
+<style>
+	* {
+		margin: 0px;
+		padding: 0px;
+		box-sizing: border-box;
+	}
+
+	nav {
+
+		background-color: #222;
+		;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 27px;
+
+
+	}
+
+	nav h2 {
+		color: white;
+		font-weight: bolder;
+		font-family: 'Fjalla One', sans-serif;
+	}
+
+	nav ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	nav ul li {
+		list-style: none;
+		padding: 0px 5px;
+	}
+
+	nav ul li a {
+		text-decoration: none;
+		color: white;
+		font-size: 15px;
+		margin: 20px;
+		font-size: medium;
+	}
+
+	.hov:hover {
+		border-bottom: 3px solid red;
+		font-size: larger;
+
+	}
+
+
+	img {
+		width: 100%;
+		overflow: visible;
+	}
+
+
+	.gfg {
+		margin: 3%;
+		position: relative;
+	}
+
+	.first-txt {
+		position: absolute;
+		top: 17px;
+		left: 20px;
+		color: white;
+	}
+
+	.second-txt {
+		position: absolute;
+		top: 17px;
+		left: 150px;
+		color: white;
+	}
+
+	.active {
+		color: yellow;
+		font-size: larger;
+	}
+
+	.carousel-inner img {
+		height: 455px;
+	}
+
+	.new {
+		font-size: 40px;
+		justify-content: center;
+		text-align: center;
+		margin: 25px;
+	}
+
+	.content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 20px;
+		flex-direction: column;
+	}
+
+	.content img {
+		height: 200px;
+		width: 200px;
+		justify-content: center;
+		align-items: center;
+		margin-left: 80px;
+	}
+
+	.minicont {
+		margin-top: 50px;
+		align-items: center;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 30px;
+		width: 65%;
+
+	}
+
+	.hasnew {
+		display: block;
+		margin-left: 30px;
+		margin-right: 75px;
+		margin-top: 20px;
+		width: 100%;
+	}
+
+
+
+	.card-img-top {
+		width: 80%;
+	}
+
+	.card-title {
+		text-align: center;
+		justify-content: center;
+	}
+
+	.pankaj {
+		border: 5px solid #171f1f;
+	}
+
+	.carousel-control-prev {
+		color: black;
+	}
+
+	#hasnext {
+		height: 236px;
+	}
+
+	.card-text {
+		justify-content: center;
+		text-align: center;
+	}
+
+	#carousel-item {
+		transition: -webkit-transform .6s ease;
+		transition: transform .6s ease;
+		transition: transform .6s ease, -webkit-transform .6s ease;
+	}
+	footer{
+		display: flex;
+		justify-content: center;
+		background-color: #171f1f;
+		color: white;
+		margin-top: 200px;
+		height: 80px;
+		align-items: center;
+			
+	}
+</style>
+
+<body>
+	<nav>
+		<h2>Online Banking</h2>
+		<ul>
+			<li><a class="active">Home</a></li>
+			<li><a class="hov" href="customers">Customer Details</a></li>
+			<li><a class="hov" href="trans">Transaction Details</a></li>
+			<!-- <li><a class="hov" href="serv">Services</a></li> -->
+
+		</ul>
+	</nav>
+	<div class="new">
+		<strong> <i> "Banking Is Necessary..... Banks Are Not !!!!" </i></strong>
+	</div>
+	<!-- carousel -->
+	<div class="pankaj">
+		<div>
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+				  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+				  <div class="carousel-item active">
+					<img class="d-block w-100" src="{% static 'ProjectApp/Anime.gif'%}" alt="First slide">
+				  </div>
+				  <div class="carousel-item">
+					<img class="d-block w-100" src=".{% static 'ProjectApp/bank_main.jpg'%}" alt="Second slide">
+				  </div>
+				  <div class="carousel-item">
+					<img class="d-block w-100" src="{% static 'ProjectApp/card.jpg'%}" alt="Third slide">
+				  </div>
+				</div>
+				
+			  </div>
+		</div>
+	</div>
+	
+
+	<div class="minicont">
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+			<div class="col">
+				<div class="card h-100" style="cursor: pointer" >
+					<div class="hasnew"><img src="{% static 'ProjectApp/servi1.png'%}" class="card-img-top" alt="...">
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Grow Your Money</h5>
+						<p class="card-text"> "The longer you're not taking action the more money you're losing."</p>
+					</div>
+
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100"  style="cursor: pointer"  >
+					<div class="hasnew" id="hasnext"><img src="{% static 'ProjectApp/finance.jpg'%}"
+							class="card-img-top" alt="...">
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Investment Options</h5>
+						<p class="card-text">"An investment in knowledge pays the best interest."</p>
+					</div>
+
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100" style="cursor: pointer">
+					<div class="hasnew"><img src="{% static 'ProjectApp/serv2.jpg'%}" class="card-img-top" alt="...">
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Assistance</h5>
+						<p class="card-text">"Full Assistance from our end. Contact Anytime and get help Anytime".</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<footer>&copy; Copyright 2022 Banking.com</footer>
+	 
+
+
+
+
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		crossorigin="anonymous"></script>
+
+
+
+
+
+</body>
+
+</html>
+
+<!-- {% static 'ProjectApp/Atm.jpg'%} -->
